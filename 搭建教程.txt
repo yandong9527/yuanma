@@ -1,0 +1,56 @@
+
+**************H5德州扑克搭建教程 开红大大源码库khddymk.cn***********
+
+环境：ng1.19，mysql5.6，phpmyadmin5.0，PHP7.2，redis，PHP安装Swoole扩展
+
+放行端口：1-65535
+
+WangYa/config.php 修改数据库名称帐号密码
+
+WangYa/conn.php 7.8行换自己域名，65.66行改公众号ID密钥
+
+WangYa/Controller/login.php 86行改自己的公众号回调
+
+修改myerweimalobby.php 第26行ceshi.789123456.top为你自己的域名
+
+WangYa/temp/Game/list_2.php 将43.129.9.71改为你自己的ip
+
+WangYa/temp/Game/server_fqzsK.php 将43.129.9.71改为你自己的ip
+
+ay_gameserver数据表 serverlist字段改 47.96.140.5为你自己的ip
+
+ay_gamelist数据表 gl_gameurl字段改ceshi.789123456.top为你自己的域名
+
+
+启动：
+cd /www/wwwroot/路径/youxi
+php dezhouJ.php start -d
+
+
+支付对接的易支付：
+
+修改路径/pay/ybpaomapay.php    替换数据库和支付密钥
+              /pay/ybzspay.php。        替换数据库和支付密钥
+/WangYa/Tpl/pay/paomapay.php   61,62行改支付ID密钥
+
+/WangYa/Tpl/pay/zspay.php。    63，64行改支付ID密钥
+
+支付注册地址：www.w-x.net.cn
+
+
+后台地址：
+
+域名/admin
+
+账号：admin，密码123456
+
+如果忘记后台密码了，注释掉 WangYa/Tpl/admin/admin/login.php里的
+
+if($DATA['pass'] != mima($PASS)){
+
+    return apptongxin($SHUJU,415,-1,$LANG['passcw'],$YZTOKEN,$WY);
+}
+
+随便输入密码就可以进去，然后修改密码把他还原就行。
+
+开红大大源码库 khddymk.cn
